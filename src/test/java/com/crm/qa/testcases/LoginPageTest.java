@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import org.testng.annotations.AfterMethod;
@@ -18,7 +19,8 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	@BeforeMethod
-	public void setUp(){
+	public void setUp() throws InterruptedException{
+		Thread.sleep(2000);
 		initialization();
 	 loginpage=new LoginPage();
 	}
@@ -42,7 +44,11 @@ public class LoginPageTest extends TestBase {
 	
 	
 	@AfterMethod
-	public void tearDown(){
+	public void tearDown() throws InterruptedException{
+		Thread.sleep(2000);
+		
+		//driver.findElement(By.xpath("/html/body/table[1]/tbody/tr[2]/td[1]/div/table/tbody/tr/td[4]/a/i")).click();
+
 		driver.quit();
 	}
 

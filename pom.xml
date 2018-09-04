@@ -12,30 +12,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <suiteXMLFile>testng.xml</suiteXMLFile>
+     
   </properties>
   
-   <build>
-    <!-- To define the plugin version in your parent POM -->
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        
-      </plugins>
-    </pluginManagement>
-    <!-- To use the plugin goals in your POM or parent POM -->
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
-      </plugin>
-      
-    </plugins>
-  </build>
+   
   
   
 
@@ -128,5 +109,21 @@
 			
 
   </dependencies>
+  
+  <build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.22.0</version>
+<configuration>
+<suiteXmlFiles>
+<suiteXmlFile>/home/sbv6/Desktop/Soumya/eclipse_workspace/FreeCRMTest/src/main/resources/testng.xml</suiteXmlFile>
+</suiteXmlFiles>
+</configuration>
+</plugin>
+
+</plugins>
+</build>
   
 </project>
